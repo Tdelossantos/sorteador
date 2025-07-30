@@ -1,7 +1,12 @@
 function sortear() {
-    let quantidade = document.getElementById("quantidade").value;
-    let de = document.getElementById("de").value;
-    let ate = document.getElementById("ate").value;
+    let quantidade = parseInt(document.getElementById("quantidade").value);
+    let de = parseInt(document.getElementById("de").value);
+    let ate = parseInt(document.getElementById("ate").value);
 
-    alert(`${quantidade} nros de ${de} até ${ate}`)
+    let numero = obterNumeroAleatorio(de, ate);
+    alert(numero);
+}
+
+function obterNumeroAleatorio(min, max){
+
 }
