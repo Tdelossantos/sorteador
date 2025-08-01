@@ -6,7 +6,7 @@ function sortear(){
     let sorteados = [];
     let numero;
 
-    if (quantidade <= (ate-de)+1){
+    if (quantidade <= (ate-de)+1 && de < ate){
         for (let i = 0; i < quantidade; i++){
         numero = obterNumeroAleatorio(de, ate);
         while (sorteados.includes(numero)){
@@ -19,7 +19,9 @@ function sortear(){
         resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
 
         alterarStatusBotao();    
-    } else{
+    } else if (de >= ate){
+        resultado.innerHTML = `<label class="texto__paragrafo">Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!</label>`;
+    } else {
         resultado.innerHTML = `<label class="texto__paragrafo">Quantidade muito alta</label>`;
     }
 }
